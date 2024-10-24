@@ -1,1 +1,7 @@
-# fi-dialogue-agents-profiles
+# FI Dialogue Agents Profiles
+
+## EchoPuff
+
+## Chatmeleon
+
+## Alakazamind
