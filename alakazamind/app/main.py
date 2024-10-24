@@ -9,7 +9,11 @@ import anthropic
 
 from fi_dialogue_agents import Agent
 
-load_dotenv()
+env_path = os.path.join(os.path.dirname(__file__), '..', '.env')
+load_dotenv(env_path)
+
+host = os.getenv('HOST', '127.0.0.1')
+port = int(os.getenv('PORT', 5380))
 
 claude_client = anthropic.Client(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
@@ -149,6 +153,6 @@ def received_message(message):
         agent.stop_typing()
         
 # Initialize and run the agent
-agent = Agent(host="127.0.0.1", port=5382)
+agent = Agent(host=host, port=port)
 agent.on_message(received_message)
 agent.run()

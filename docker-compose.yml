@@ -1,0 +1,24 @@
+services:
+  alakazamind:
+    build: ./alakazamind
+    container_name: alakazamind_service
+    env_file: ./alakazamind/.env
+    ports:
+      - "5381:5380" # Expose the container's port 5380 to the host's port 5381
+    restart: unless-stopped
+
+  chatmeleon:
+    build: ./chatmeleon
+    container_name: chatmeleon_service
+    env_file: ./chatmeleon/.env
+    ports:
+      - "5382:5380" # Expose the container's port 5380 to the host's port 5382
+    restart: unless-stopped
+
+  echopuff:
+    build: ./echopuff
+    container_name: echopuff_service
+    env_file: ./echopuff/.env
+    ports:
+      - "5383:5380" # Expose the container's port 5380 to the host's port 5383
+    restart: unless-stopped

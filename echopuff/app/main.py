@@ -1,7 +1,16 @@
-from fi_dialogue_agents import Agent
+import os
+import re
 import time
 
-import re
+from dotenv import load_dotenv
+
+from fi_dialogue_agents import Agent
+
+env_path = os.path.join(os.path.dirname(__file__), '..', '.env')
+load_dotenv(env_path)
+
+host = os.getenv('HOST', '127.0.0.1')
+port = int(os.getenv('PORT', 5380))
 
 AGENT_WPM = 70
 
@@ -73,6 +82,6 @@ def received_message(message):
     agent.send_message(message_2)
     agent.stop_typing()
 
-agent = Agent(host="127.0.0.1", port=5380)
+agent = Agent(host=host, port=port)
 agent.on_message(received_message)
 agent.run()
