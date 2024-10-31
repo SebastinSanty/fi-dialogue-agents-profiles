@@ -7,9 +7,10 @@ certifi==2024.8.30
 charset-normalizer==3.4.0
 click==8.1.7
 distro==1.9.0
-fi_dialogue_agents==0.0.8
+fi_dialogue_agents==0.0.10
 filelock==3.16.1
 Flask==3.0.3
+Flask-Cors==5.0.0
 Flask-SocketIO==5.4.1
 fsspec==2024.10.0
 h11==0.14.0
@@ -25,6 +26,7 @@ openai==1.52.2
 packaging==24.1
 pydantic==2.9.2
 pydantic_core==2.23.4
+pyngrok==7.2.0
 python-dotenv==1.0.1
 python-engineio==4.10.1
 python-socketio==5.11.4
